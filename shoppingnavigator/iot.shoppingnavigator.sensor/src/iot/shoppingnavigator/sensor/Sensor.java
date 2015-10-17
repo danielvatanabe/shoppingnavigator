@@ -9,7 +9,6 @@ public interface Sensor {
 
 
 	public void printSensorLocation();
-	
 	public double[] getNavPosition(int navId);
 	
 }

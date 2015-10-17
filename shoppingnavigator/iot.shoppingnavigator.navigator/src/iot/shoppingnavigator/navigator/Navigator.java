@@ -8,6 +8,6 @@ public interface Navigator extends Runnable {
 	public double getY();
 	
 	public Vector<String> getOptionFromCentral();
-	public void sendAnswerToCentral(int answer);
+	public void sendAnswerToCentral(String answer);
 	
 }
