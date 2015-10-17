@@ -1,30 +1,21 @@
 package iot.shoppingnavigator.navigator.impl;
 
-import java.util.Collection;
-import java.util.Scanner;
-import java.util.Vector;
 
-import org.osgi.framework.BundleContext;
-import org.osgi.framework.ServiceReference;
+import java.util.Vector;
 
 import iot.shoppingnavigator.central.Central;
 import iot.shoppingnavigator.navigator.Navigator;
-import iot.shoppingnavigator.sensor.Sensor;
 
 public class NavigatorImpl implements Navigator{
 	
-	private Collection<ServiceReference<Sensor>> sensorRefs;
-	private BundleContext context;
     private Central central;
     private NavigatorPosition navigatorPosition;
 
     private int id;
 
-	NavigatorImpl(BundleContext context, Central central, Collection<ServiceReference<Sensor>> sensorRefs) {
-		this.context = context;
+	NavigatorImpl(Central central, NavigatorPosition navigatorPosition) {
 		this.central = central;
-		this.sensorRefs = sensorRefs;
-		this.navigatorPosition = new NavigatorPosition(context, sensorRefs);
+		this.navigatorPosition = navigatorPosition;
 	}
 	
 	@Override

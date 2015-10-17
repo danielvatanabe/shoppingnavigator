@@ -6,7 +6,6 @@ import java.util.Vector;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 
-import iot.shoppingnavigator.central.Central;
 import iot.shoppingnavigator.sensor.Sensor;
 
 public class NavigatorPosition implements Runnable{

@@ -25,7 +25,6 @@ public class SensorImpl implements Sensor{
 		pos[1] = real.getY();
 		return pos;
 	}
-
-
+	
 	
 }

@@ -29,11 +29,14 @@ public class Activator implements BundleActivator  {
     	centralReference = context.getServiceReference(Central.class.getName());
         central = (Central) context.getService(centralReference);
 		
+    	NavigatorPosition navigatorPosition = new NavigatorPosition(context, sensorRefs);
+
         //register navigator
-        Navigator navigatorService = new NavigatorImpl(context, central, sensorRefs);
+        Navigator navigatorService = new NavigatorImpl(central, navigatorPosition);
     	navigatorRegistration =context.registerService(Navigator.class.getName(), navigatorService, null);
     	System.out.println("qwert Navigator Regristered");
 		
+    	
 		Thread threadNav = new Thread(navigatorService);
 		threadNav.start();
     }
