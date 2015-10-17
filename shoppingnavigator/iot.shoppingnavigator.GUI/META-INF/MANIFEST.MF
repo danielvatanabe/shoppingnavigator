@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: GUI
+Bundle-SymbolicName: iot.shoppingnavigator.GUI
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: iot.shoppingnavigator.gui.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: iot.shoppingnavigator.navigator,
+ iot.shoppingnavigator.realposition,
+ org.osgi.framework;version="1.3.0"
+Export-Package: iot.shoppingnavigator.gui
