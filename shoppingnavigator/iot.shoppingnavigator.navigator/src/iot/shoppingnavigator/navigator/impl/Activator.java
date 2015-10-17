@@ -20,7 +20,6 @@ public class Activator implements BundleActivator  {
     private Sensor sensor;
     private Central central;
 
-    
     public void start(BundleContext context) throws Exception {		
 
     	//get sensors
