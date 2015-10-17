@@ -7,7 +7,7 @@ public interface Central {
 	public static final String ID = "id";
 
 	public Vector<String> getOptions(int id);
-	public void receiveAnswer(int id , int answer);
+	public void receiveAnswer(int id , String answer);
 	
 	
 	

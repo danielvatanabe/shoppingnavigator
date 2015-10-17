@@ -38,7 +38,7 @@ public class NavigatorImpl implements Navigator{
 	public Vector<String> getOptionFromCentral() {		
 		return central.getOptions(id);
 	}
-	public void sendAnswerToCentral(int answer) {		
+	public void sendAnswerToCentral(String answer) {		
 		central.receiveAnswer(id, answer);
 	}
 	
