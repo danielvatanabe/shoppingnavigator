@@ -2,6 +2,9 @@ package iot.shoppingnavigator.restaurant;
 
 import java.util.Vector;
 
+/**
+ * The Interface Restaurant.
+ */
 public interface Restaurant{
 	
 	final public String NAME = "name";
@@ -17,9 +20,19 @@ public interface Restaurant{
 	public void setOpen(boolean open);
 	
 	public boolean isItOpen();
-	
+		
+	/**
+	 * Gets the menu.
+	 *
+	 * @return the menu
+	 */
 	public Vector<String> getMenu();
 	
+	/**
+	 * Adds the menu.
+	 *
+	 * @param dish the dish
+	 */
 	public void addMenu(String dish);
 	
 }

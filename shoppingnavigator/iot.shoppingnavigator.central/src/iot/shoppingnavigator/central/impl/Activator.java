@@ -13,6 +13,9 @@ import iot.shoppingnavigator.central.Central;
 import iot.shoppingnavigator.restaurant.Restaurant;
 import iot.shoppingnavigator.store.Store;
 
+/**
+ * The Class Activator.
+ */
 public class Activator implements BundleActivator {
 	public void start(BundleContext context) throws Exception {
 		

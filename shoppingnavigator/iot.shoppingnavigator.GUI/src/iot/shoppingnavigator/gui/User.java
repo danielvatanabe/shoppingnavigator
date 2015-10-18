@@ -6,8 +6,6 @@ import java.util.Vector;
 import iot.shoppingnavigator.navigator.Navigator;
 import iot.shoppingnavigator.realposition.RealPosition;
 
-
-
 public class User implements Runnable{
 
 	private Navigator navigator;

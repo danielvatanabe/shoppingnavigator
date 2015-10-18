@@ -11,30 +11,49 @@ import iot.shoppingnavigator.central.Central;
 import iot.shoppingnavigator.restaurant.Restaurant;
 import iot.shoppingnavigator.store.Store;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class CentralImpl.
+ */
 public class CentralImpl implements Central{
 	
+	/** The restaurant refs. */
 	private Collection<ServiceReference<Restaurant>> restaurantRefs;
 	private Collection<ServiceReference<Store>> storeRefs;
 	private Collection<ServiceReference<Bathroom>> bathroomRefs;
 
+	/** The context. */
 	private BundleContext context;
 	
+	/** The answer. */
 	private String answer;
+	
+	/** The state. */
 	private States state;
 	private double[] positionNavigator;
 	private double[] positionToGo;
 	
 	private FindPath path;
-	
+
+	/** The current restaurant. */	
 	private Restaurant currentRestaurant;
 	private Store currentStore;
 	private Vector<double[]> coordinates = new Vector<double[]>();
 	private Bathroom bathroom;
 	
+	/**
+	 * The Enum States.
+	 */
 	public enum States {
 		Initial, Bathroom, BathroomM, BathroomW, Restaurants, ShowMenuRestaurant, Stores, ShowPromotionStore, GoPlace; 
 	}
 
+	/**
+	 * Instantiates a new central impl.
+	 *
+	 * @param restaurantRefs the restaurant refs
+	 * @param context the context
+	 */
 	CentralImpl(Collection<ServiceReference<Restaurant>> restaurantRefs, Collection<ServiceReference<Store>> storeRefs, Collection<ServiceReference<Bathroom>> bathroomRefs, BundleContext context) {
 		this.state = States.Initial;
 		this.restaurantRefs = restaurantRefs;
@@ -135,6 +154,7 @@ public class CentralImpl implements Central{
 		}	
 		return options;
 	}
+	
 	
 	public void receiveAnswer(int id, String answer) {
 		//System.out.println("central: "+answer);

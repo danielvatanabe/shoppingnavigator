@@ -14,10 +14,21 @@ import iot.shoppingnavigator.sensor.Sensor;
 import iot.shoppingnavigator.central.Central;
 
 
+/**
+ * The Class Activator.
+ */
 public class Activator implements BundleActivator  {
+    
+    /** The navigator registration. */
     ServiceRegistration navigatorRegistration;
+    
+    /** The central reference. */
     private ServiceReference centralReference;
+    
+    /** The sensor. */
     private Sensor sensor;
+    
+    /** The central. */
     private Central central;
 
     public void start(BundleContext context) throws Exception {		
@@ -44,6 +55,11 @@ public class Activator implements BundleActivator  {
     }
     
     
+	/**
+	 * _sensor nav postion.
+	 *
+	 * @param ci the ci
+	 */
 	public void _sensorNavPostion(CommandInterpreter ci) {
 		System.out.println("sensorNavPostion command:");
 	}  
