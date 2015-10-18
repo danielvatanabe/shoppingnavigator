@@ -1,8 +1,6 @@
 package iot.shoppingnavigator.realposition.impl;
 
 import java.util.Random;
-import java.util.Scanner;
-import java.util.Vector;
 
 import iot.shoppingnavigator.realposition.RealPosition;
 

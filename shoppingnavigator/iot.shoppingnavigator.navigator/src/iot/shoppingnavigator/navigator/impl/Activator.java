@@ -2,8 +2,6 @@ package iot.shoppingnavigator.navigator.impl;
 
 import java.util.Collection;
 
-import org.eclipse.osgi.framework.console.CommandInterpreter;
-import org.eclipse.osgi.framework.console.CommandProvider;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
@@ -54,13 +52,4 @@ public class Activator implements BundleActivator  {
     	navigatorRegistration.unregister();
     }
     
-    
-	/**
-	 * _sensor nav postion.
-	 *
-	 * @param ci the ci
-	 */
-	public void _sensorNavPostion(CommandInterpreter ci) {
-		System.out.println("sensorNavPostion command:");
-	}  
 }

@@ -17,7 +17,7 @@ import iot.shoppingnavigator.store.Store;
  */
 public class CentralImpl implements Central{
 	
-	/** The restaurant refs. */
+	/** The refs. */
 	private Collection<ServiceReference<Restaurant>> restaurantRefs;
 	private Collection<ServiceReference<Store>> storeRefs;
 	private Collection<ServiceReference<Bathroom>> bathroomRefs;
@@ -107,7 +107,7 @@ public class CentralImpl implements Central{
 			    break;
 			case Restaurants:
 				for (final ServiceReference<Restaurant> restaurantRef : restaurantRefs) {
-					System.out.println("prop name "+restaurantRef.getProperty(Restaurant.NAME));
+					//System.out.println("prop name "+restaurantRef.getProperty(Restaurant.NAME));
 					options.add((String) restaurantRef.getProperty(Restaurant.NAME));
 		    	}	
 			    break;
@@ -146,6 +146,7 @@ public class CentralImpl implements Central{
 				break;
 
 			case GoPlace:
+				System.out.println("Going to Place");
 				options = path.findWay(positionNavigator, positionToGo);
 				state = States.Initial;
 			    break;
