@@ -17,15 +17,17 @@ public class CentralImpl implements Central{
 	private String answer;
 	private States state;
 	
-	private Restaurant currentResturant;
+	private Restaurant currentRestaurant;
+	
 	
 	public enum States {
-		Initial, Bathroom, Restaurants, ChooseRestaurant, GetMenuCurrentResutant, Stores; 
+		Initial, Bathroom, Restaurants, ChooseRestaurant, GetMenuCurrentRestaurant, Stores; 
 	}
 
-	CentralImpl() {
-		state = States.Initial;
-		
+	CentralImpl(Collection<ServiceReference<Restaurant>> restaurantRefs, BundleContext context) {
+		this.state = States.Initial;
+		this.restaurantRefs = restaurantRefs;
+		this.context = context;
 	}
 	
 	@Override
@@ -45,16 +47,21 @@ public class CentralImpl implements Central{
 					options.add((String) restaurantRef.getProperty(Restaurant.NAME));
 		    	}	
 			    break;
-			case ChooseRestaurant:
+			case GetMenuCurrentRestaurant:
 				//type of restaurants
 				for (final ServiceReference<Restaurant> restaurantRef : restaurantRefs) {
-					if (answer.compareTo((String) restaurantRef.getProperty(Restaurant.NAME))== 0) {
+					//System.out.println("a= "+ answer + "prop name "+restaurantRef.getProperty(Restaurant.NAME));
+
+					if (answer.compareTo((String) restaurantRef.getProperty(Restaurant.NAME)) == 0) {
 						//restaurant found
-				        currentResturant = context.getService(restaurantRef);			
+						currentRestaurant = (Restaurant) context.getService(restaurantRef);	
+						for ( String s: currentRestaurant.getMenu()) {
+							options.add(s);
+						}
+						break;
 					}
 		    	}	
-			case GetMenuCurrentResutant:
-				
+				state = States.Initial;	
 				break;
 			case Stores:
 				options.add("1-Clothes Store");
@@ -69,13 +76,15 @@ public class CentralImpl implements Central{
 	}
 	
 	public void receiveAnswer(int id, String answer) {
+		//System.out.println("central: "+answer);
 		switch (state) {
 			case Initial:
-				if (answer.compareTo("1") == 0) state = States.Restaurants;
-				else if (answer.compareTo("2") == 0) state = States.Stores;
+				if (answer.compareTo("2") == 0) state = States.Restaurants;
+				else if (answer.compareTo("3") == 0) state = States.Stores;
 				else state = States.Initial;
 			    break;
 			case Restaurants:
+				state = States.GetMenuCurrentRestaurant;
 				this.answer = answer;
 			    break;
 			default:

@@ -34,7 +34,7 @@ public class User implements Runnable{
         		for (String s : options) System.out.println(s);
         	}
         	else if (command.equals("p")) {
-            	String answer = sc.next();
+            	String answer = sc.nextLine();
             	sc.nextLine();
         		navigator.sendAnswerToCentral(answer);
         	}

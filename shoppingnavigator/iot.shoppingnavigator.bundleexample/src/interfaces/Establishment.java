@@ -7,9 +7,7 @@ public interface Establishment {
 	public void setName(String Name);
 	
 	public double[] getPosition();
-		
-	public int getOpen();
-	
+			
 	public void setOpen(int open);
 	
 	public boolean isItOpen();

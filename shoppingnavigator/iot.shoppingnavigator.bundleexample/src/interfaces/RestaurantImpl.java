@@ -55,4 +55,5 @@ public class RestaurantImpl extends EstablishmentImpl implements Restaurant {
 		
 		return "Restaurant: " + getName() + ":  X = " + pos[0] + " Y = " + pos[1] +"; Open = " + isItOpen();
 	}
+
 }
