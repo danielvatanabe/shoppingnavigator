@@ -63,7 +63,6 @@ public class NavigatorPosition implements Runnable{
 		this.navX = vx.get(0);
 		this.navY = vy.get(0);
 		
-
 		return true;
 	}
 	

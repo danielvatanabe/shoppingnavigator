@@ -21,7 +21,6 @@ public class Activator implements BundleActivator {
 		realPositionReference = context.getServiceReference(RealPosition.class.getName());
         real = (RealPosition) context.getService(realPositionReference);
 		
-        
         final Dictionary<String, Object> props = new Hashtable<String, Object>();
 		int gridSizeX = 100;
 		int gridSizeY = 100;
@@ -39,11 +38,6 @@ public class Activator implements BundleActivator {
 				id++;
 			}
 		}
-
-        
-         
-    	
-    	
 		System.out.println("Sensors Regristered");
 
     	

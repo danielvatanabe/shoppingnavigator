@@ -2,7 +2,7 @@ package interfaces;
 
 import java.util.List;
 
-public interface Restaurant {
+public interface Restaurant extends Establishment{
 	
 	public List<String> getMenu();
 	

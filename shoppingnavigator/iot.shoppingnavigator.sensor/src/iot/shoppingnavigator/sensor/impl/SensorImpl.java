@@ -14,7 +14,6 @@ public class SensorImpl implements Sensor{
 		this.y = y;
 	}
 	
-	
 	public void printSensorLocation() {
 		System.out.println(x + " " + y);
 	}
