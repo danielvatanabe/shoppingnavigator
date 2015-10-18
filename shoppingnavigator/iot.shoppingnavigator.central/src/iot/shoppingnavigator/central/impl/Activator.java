@@ -12,6 +12,9 @@ import org.osgi.framework.ServiceRegistration;
 import iot.shoppingnavigator.central.Central;
 import iot.shoppingnavigator.restaurant.Restaurant;
 
+/**
+ * The Class Activator.
+ */
 public class Activator implements BundleActivator {
     ServiceRegistration sensorRegistration;
 	public void start(BundleContext context) throws Exception {

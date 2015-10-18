@@ -9,21 +9,53 @@ import org.osgi.framework.ServiceReference;
 import iot.shoppingnavigator.central.Central;
 import iot.shoppingnavigator.restaurant.Restaurant;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class CentralImpl.
+ */
 public class CentralImpl implements Central{
 	
+	/** The restaurant refs. */
 	private Collection<ServiceReference<Restaurant>> restaurantRefs;
+	
+	/** The context. */
 	private BundleContext context;
 	
+	/** The answer. */
 	private String answer;
+	
+	/** The state. */
 	private States state;
 	
+	/** The current restaurant. */
 	private Restaurant currentRestaurant;
 	
 	
+	/**
+	 * The Enum States.
+	 */
 	public enum States {
-		Initial, Bathroom, Restaurants, ChooseRestaurant, GetMenuCurrentRestaurant, Stores; 
+		
+		/** The Initial. */
+		Initial, 
+		 /** The Bathroom. */
+		 Bathroom, 
+		 /** The Restaurants. */
+		 Restaurants, 
+		 /** The Choose restaurant. */
+		 ChooseRestaurant, 
+		 /** The Get menu current restaurant. */
+		 GetMenuCurrentRestaurant, 
+		 /** The Stores. */
+		 Stores; 
 	}
 
+	/**
+	 * Instantiates a new central impl.
+	 *
+	 * @param restaurantRefs the restaurant refs
+	 * @param context the context
+	 */
 	CentralImpl(Collection<ServiceReference<Restaurant>> restaurantRefs, BundleContext context) {
 		this.state = States.Initial;
 		this.restaurantRefs = restaurantRefs;
@@ -74,6 +106,7 @@ public class CentralImpl implements Central{
 		}	
 		return options;
 	}
+	
 	
 	public void receiveAnswer(int id, String answer) {
 		//System.out.println("central: "+answer);
