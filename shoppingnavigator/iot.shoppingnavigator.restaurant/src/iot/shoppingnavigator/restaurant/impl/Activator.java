@@ -30,7 +30,7 @@ public class Activator implements BundleActivator  {
 		props.put(Restaurant.Y, 95.0);
     	restaurant = new RestaurantImpl("Japanese Food", 10, 95);
     	restaurant.addMenu("Sushi: $3");
-    	restaurant.addMenu("Yakisaba: $15");
+    	restaurant.addMenu("Yakisoba: $15");
     	context.registerService(Restaurant.class.getName(), restaurant, props);
     	
 		props.put(Restaurant.NAME, "Vegetarian");
