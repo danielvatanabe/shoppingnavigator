@@ -8,6 +8,9 @@ import org.osgi.framework.ServiceReference;
 
 import iot.shoppingnavigator.sensor.Sensor;
 
+/**
+ * The Class NavigatorPosition.
+ */
 public class NavigatorPosition implements Runnable{
 	
 	private Collection<ServiceReference<Sensor>> sensorRefs;
@@ -37,6 +40,11 @@ public class NavigatorPosition implements Runnable{
 		}
 	}
 	
+	/**
+	 * Refresh navigator pos.
+	 *
+	 * @return the boolean
+	 */
 	public Boolean refreshNavigatorPos() {
 		Vector<Double> vx = new Vector<Double>();
 		Vector<Double> vy = new Vector<Double>();
@@ -66,10 +74,20 @@ public class NavigatorPosition implements Runnable{
 		return true;
 	}
 	
+	/**
+	 * Gets the x.
+	 *
+	 * @return the x
+	 */
 	double getX(){
 		return navX;
 	}
 	
+	/**
+	 * Gets the y.
+	 *
+	 * @return the y
+	 */
 	double getY(){
 		return navY;
 	}
