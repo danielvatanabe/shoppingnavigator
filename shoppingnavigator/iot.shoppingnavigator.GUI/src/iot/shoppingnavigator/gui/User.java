@@ -37,10 +37,10 @@ public class User implements Runnable{
         	}
         	else if (command.equals("p")) {
             	String answer = sc.nextLine();
-            	sc.nextLine();
         		navigator.sendAnswerToCentral(answer);
         	}
         
+        	navigator.sendPositionToCentral();
         	if (command.equals("w") || command.equals("d") || command.equals("s") || command.equals("a"))
         		System.out.println("Position ("+ real.getX() + ", " + real.getY() + ")");
         }

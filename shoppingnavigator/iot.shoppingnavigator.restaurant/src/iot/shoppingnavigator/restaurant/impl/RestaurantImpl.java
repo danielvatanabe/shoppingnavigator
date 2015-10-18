@@ -12,7 +12,7 @@ public class RestaurantImpl extends EstablishmentImpl implements Restaurant{
 	double[] pos = new double[2];
 	
 	Vector<String> menu;
-	
+
 	public RestaurantImpl(String name, double x, double y) {
 		super(name, x, y);	
 		menu = new Vector<String>();

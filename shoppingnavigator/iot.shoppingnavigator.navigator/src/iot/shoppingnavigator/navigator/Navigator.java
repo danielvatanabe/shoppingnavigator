@@ -9,5 +9,6 @@ public interface Navigator extends Runnable {
 	
 	public Vector<String> getOptionFromCentral();
 	public void sendAnswerToCentral(String answer);
-	
+	public void sendPositionToCentral();
+
 }

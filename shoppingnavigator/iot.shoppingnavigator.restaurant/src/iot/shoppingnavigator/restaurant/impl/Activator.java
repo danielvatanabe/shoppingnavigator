@@ -5,12 +5,10 @@ import java.util.Hashtable;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
-import org.osgi.framework.ServiceRegistration;
 
 import iot.shoppingnavigator.restaurant.Restaurant;
 
 public class Activator implements BundleActivator  {
-    ServiceRegistration restaurantService;
     Restaurant restaurant;
     
     public void start(BundleContext context) throws Exception {
@@ -42,6 +40,5 @@ public class Activator implements BundleActivator  {
     	context.registerService(Restaurant.class.getName(), restaurant, props);
     }
     public void stop(BundleContext context) throws Exception {
-    	restaurantService.unregister();
     }
 }

@@ -73,5 +73,13 @@ public class NavigatorPosition implements Runnable{
 	double getY(){
 		return navY;
 	}
+	
+	double[] getPosition(){
+		double[] pos = new double[2];
+		pos[0] = navX;
+		pos[1] = navY;
+		return pos;
+	}
 
 }
+

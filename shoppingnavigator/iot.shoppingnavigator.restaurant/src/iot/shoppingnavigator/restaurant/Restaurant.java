@@ -2,15 +2,24 @@ package iot.shoppingnavigator.restaurant;
 
 import java.util.Vector;
 
-import iot.shoppingnavigator.util.Establishment;
-
-public interface Restaurant extends Establishment{
-
-	final String NAME = "name";
-	final String X = "x";
-	final String Y = "y";
-
+public interface Restaurant{
+	
+	final public String NAME = "name";
+	final public String X = "x";
+	final public String Y = "y";
+	
+	public String getName();
+	
+	public void setName(String Name);
+	
+	public double[] getPosition();
+			
+	public void setOpen(boolean open);
+	
+	public boolean isItOpen();
+	
 	public Vector<String> getMenu();
+	
 	public void addMenu(String dish);
 	
 }

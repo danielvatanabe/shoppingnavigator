@@ -8,7 +8,6 @@ public interface Central {
 
 	public Vector<String> getOptions(int id);
 	public void receiveAnswer(int id , String answer);
-	
-	
+	public void receivePosition(int id, double[] pos);
 	
 }

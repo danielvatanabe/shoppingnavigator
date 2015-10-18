@@ -41,5 +41,9 @@ public class NavigatorImpl implements Navigator{
 	public void sendAnswerToCentral(String answer) {		
 		central.receiveAnswer(id, answer);
 	}
+	public void sendPositionToCentral() {		
+		central.receivePosition(id, navigatorPosition.getPosition());
+	}
+
 	
 }
