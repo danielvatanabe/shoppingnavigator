@@ -34,23 +34,10 @@ public class NavigatorImpl implements Navigator{
 	
 	@Override
 	public void run() {
-		
 		Thread threadNav = new Thread(navigatorPosition);
 		threadNav.start();
-       
 	}
 	
-	public double getX(){
-		return navigatorPosition.getX();
-	}
-	
-	/* (non-Javadoc)
-	 * @see iot.shoppingnavigator.navigator.Navigator#getY()
-	 */
-	public double getY(){
-		return navigatorPosition.getY();
-	}
-
 	/* (non-Javadoc)
 	 * @see iot.shoppingnavigator.navigator.Navigator#getOptionFromCentral()
 	 */

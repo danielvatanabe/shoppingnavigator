@@ -29,7 +29,7 @@ public interface Restaurant{
 	public Vector<String> getMenu();
 	
 	/**
-	 * Adds the menu.
+	 * Add a dish to the menu.
 	 *
 	 * @param dish the dish
 	 */

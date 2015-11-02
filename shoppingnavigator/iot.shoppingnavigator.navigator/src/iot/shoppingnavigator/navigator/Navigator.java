@@ -10,20 +10,6 @@ public interface Navigator extends Runnable {
 	public default void run() {}
 	
 	/**
-	 * Gets the x.
-	 *
-	 * @return the x
-	 */
-	public double getX();
-	
-	/**
-	 * Gets the y.
-	 *
-	 * @return the y
-	 */
-	public double getY();
-	
-	/**
 	 * Gets the option from central.
 	 *
 	 * @return the option from central

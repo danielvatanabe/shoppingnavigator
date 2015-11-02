@@ -8,6 +8,7 @@ import org.osgi.framework.ServiceReference;
 
 import iot.shoppingnavigator.bathroom.Bathroom;
 import iot.shoppingnavigator.central.Central;
+import iot.shoppingnavigator.obstacle.Obstacle;
 import iot.shoppingnavigator.restaurant.Restaurant;
 import iot.shoppingnavigator.store.Store;
 
@@ -21,7 +22,7 @@ public class CentralImpl implements Central{
 	private Collection<ServiceReference<Restaurant>> restaurantRefs;
 	private Collection<ServiceReference<Store>> storeRefs;
 	private Collection<ServiceReference<Bathroom>> bathroomRefs;
-
+	
 	/** The context. */
 	private BundleContext context;
 	
@@ -54,13 +55,14 @@ public class CentralImpl implements Central{
 	 * @param restaurantRefs the restaurant refs
 	 * @param context the context
 	 */
-	CentralImpl(Collection<ServiceReference<Restaurant>> restaurantRefs, Collection<ServiceReference<Store>> storeRefs, Collection<ServiceReference<Bathroom>> bathroomRefs, BundleContext context) {
+	CentralImpl(Collection<ServiceReference<Restaurant>> restaurantRefs, Collection<ServiceReference<Store>> storeRefs, 
+			Collection<ServiceReference<Bathroom>> bathroomRefs, Collection<ServiceReference<Obstacle>> obstacleRefs, int[][] map,BundleContext context) {
 		this.state = States.Initial;
 		this.restaurantRefs = restaurantRefs;
 		this.storeRefs = storeRefs;
 		this.bathroomRefs = bathroomRefs;
 		this.context = context;
-		path = new FindPath();
+		path = new FindPath(obstacleRefs, map, context);
 	}
 	
 	@Override

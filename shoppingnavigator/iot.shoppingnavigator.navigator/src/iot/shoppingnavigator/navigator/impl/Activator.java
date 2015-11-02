@@ -23,9 +23,6 @@ public class Activator implements BundleActivator  {
     /** The central reference. */
     private ServiceReference centralReference;
     
-    /** The sensor. */
-    private Sensor sensor;
-    
     /** The central. */
     private Central central;
 

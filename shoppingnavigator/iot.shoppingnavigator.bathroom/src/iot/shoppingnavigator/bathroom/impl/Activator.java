@@ -27,9 +27,10 @@ public class Activator implements BundleActivator  {
 		props.put(Bathroom.Y, 10.0);
 		props.put(Bathroom.GENDER, "Woman");
 		bathroom = new BathroomImpl(2, 95, 10, "Woman");
-		
+			
     	context.registerService(Bathroom.class.getName(), bathroom, props);
-    	
+		System.out.println("Bathrooms Activeted");
+
     }
     public void stop(BundleContext context) throws Exception {
     }
